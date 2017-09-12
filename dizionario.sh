@@ -13,9 +13,9 @@ case $2 in
 	"en") lan1=2; lan2=1;;
 	*) echo "Language not available (languages available: italian (it), english(en)"; exit 1;;
 esac
-cut -d ";" -f$lan2 dizionario.txt >temp
+cut -d ";" -f$lan2 words.txt >temp
 exec 0<temp
-for word in `cut -d ";" -f$lan1 dizionario.txt`; do
+for word in `cut -d ";" -f$lan1 words.txt`; do
 	read trad
 	if [ $word == $1 ]; then
 		echo "The translation of $1 is $trad"
@@ -24,7 +24,7 @@ for word in `cut -d ";" -f$lan1 dizionario.txt`; do
 	fi
 done
 echo "Word not found"
-for word in `cut -d ";" -f$lan1 dizionario.txt`; do
+for word in `cut -d ";" -f$lan1 words.txt`; do
 	length1=${#1}
 	length2=${#word}
 	i=1
