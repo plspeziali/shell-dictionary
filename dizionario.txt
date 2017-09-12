@@ -1,0 +1,4 @@
+cane;dog
+gatto;cat
+tavolo;table
+mastrota;maxtrot
